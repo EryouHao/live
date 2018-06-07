@@ -1,16 +1,23 @@
-import * as components from './components'
+import 'material-design-icons'
+import 'material-design-icons/iconfont/material-icons.css'
 
-const Live = {
-  install(Vue, options) {
-    Object.values(components).forEach((component) => {
-      console.log(component)
-      Vue.use(component)
-    })
-  },
+import './assets/scss/main.scss'
+import LButton from './components/LButton'
+
+const components = [
+  LButton,
+]
+
+const install = function (Vue) {
+  if (install.installed) return
+  components.map(component => Vue.component(component.name, component))
 }
-console.log(Live)
+
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(Live)
+  install(window.Vue)
 }
 
-export default Live
+export default {
+  install,
+  LButton,
+}

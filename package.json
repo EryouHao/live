@@ -10,6 +10,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "material-design-icons": "^3.0.1",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },

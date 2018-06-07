@@ -1,4 +1,4 @@
-import Live from '../../src/components/index'
+import Live from '../../src/index'
 
 export default ({
   Vue,
