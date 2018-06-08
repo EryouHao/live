@@ -1,4 +1,5 @@
 import Live from '../../src/index'
+// import Live from '../../dist/live.common.js'
 
 export default ({
   Vue,

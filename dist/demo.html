@@ -1,0 +1,16 @@
+<title>live demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./live.umd.js"></script>
+<link rel="stylesheet" href="./live.css">
+
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: live
+  }
+}).$mount('#app')
+</script>

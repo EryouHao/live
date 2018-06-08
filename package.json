@@ -1,11 +1,12 @@
 {
-  "name": "live",
+  "name": "live-ui",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "./dist/live.common.js",
   "scripts": {
     "dev": "vuepress dev docs",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue build -t lib --name live src/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
