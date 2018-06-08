@@ -1,5 +1,6 @@
 import 'material-design-icons'
 import 'material-design-icons/iconfont/material-icons.css'
+import 'font-awesome/css/font-awesome.css'
 
 import './assets/scss/main.scss'
 import LButton from './components/LButton'

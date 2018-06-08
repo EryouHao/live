@@ -1,7 +1,14 @@
 <template>
-  <button :class="classes" @click="click">
-    <i v-if="icon" :class="{ 'material-icons': icon, 'live-icon-btn': $slots.default, 'live-icon-circle-btn': !$slots.default }">{{ icon }}</i>
-    <slot></slot>
+  <button ref="button" :class="classes" @click="$emit('click', e)">
+    <transition name="slide-top-fade">
+      <span class="icon-loading" v-if="loading">
+        <i class="fa fa-spinner fa-pulse fa-fw"></i>
+      </span>
+    </transition>
+    <span class="text">
+      <i v-if="icon" :class="{ 'material-icons': icon, 'live-icon-btn': $slots.default, 'live-icon-circle-btn': !$slots.default }">{{ icon }}</i>
+      <slot></slot>
+    </span>
   </button>
 </template>
 
@@ -16,10 +23,8 @@ export default {
     },
     size: [String, Number],
     shape: String,
-  },
-  data() {
-    return {
-    }
+    loading: Boolean,
+    long: Boolean,
   },
   computed: {
     classes() {
@@ -28,17 +33,10 @@ export default {
           [`live-btn-${this.type}`]: !!this.type,
           [`live-btn-${this.size}`]: !!this.size,
           [`live-btn-${this.shape}`]: !!this.shape,
+          'live-btn-long': !!this.long,
+          'live-btn-loading': !!this.loading,
       }]
-    },
-  },
-  methods: {
-    click(e) {
-      this.$emit('click', e)
     },
   },
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

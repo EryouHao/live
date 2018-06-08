@@ -10,6 +10,8 @@
   background: $white;
   transition: all 0.2s;
   border-radius: $btn-border-radius;
+  text-align: center;
+  overflow: hidden;
   &-default {
     &:hover {
       background: $lighter-gray;
@@ -70,6 +72,36 @@
     background-color: $lighter-gray;
     color: $default-gray;
     cursor: auto;
+  }
+  &-long {
+    width: 100%;
+    display: block;
+  }
+  .icon-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-loading {
+    pointer-events: none;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(200, 200, 200, 0.35);
+    }
+    .text {
+      opacity: 0;
+    }
   }
   .live-icon-circle-btn {
     font-size: 18px;
