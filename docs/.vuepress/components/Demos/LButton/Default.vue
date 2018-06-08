@@ -4,6 +4,7 @@
     <l-button type="primary">Button</l-button>
     <l-button type="danger">Button</l-button>
     <l-button icon="home">Button</l-button>
+    <l-button disabled>Button</l-button>
     <div style="margin: 16px 0;">
       <l-button size="large">Button</l-button>
       <l-button size="large" type="primary">Button</l-button>

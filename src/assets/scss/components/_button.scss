@@ -1,49 +1,43 @@
 .live-btn {
   height: 32px;
   padding: 0 16px;
+  border: 0;
   font-size: 14px;
-  border: 2px solid $lighter-grey;
-  color: $default-grey;
+  box-shadow: $border-box-shadow;
+  color: $dark-gray;
   cursor: pointer;
   display: inline-block;
-  background: #fff;
+  background: $white;
   transition: all 0.2s;
-  border-radius: 2px;
+  border-radius: $btn-border-radius;
   &-default {
     &:hover {
-      border-color: $main-lighter-color;
-      color: $main-color;
-      background: $main-lightest-color;
+      background: $lighter-gray;
     }
     &:active {
-      border-color: $main-color;
-      color: $main-color;
+      background: $light-gray;
     }
   }
   &-primary {
-    border-color: $main-color;
+    box-shadow: $default-box-shadow;
     background: $main-color;
-    color: #fff;
+    color: $white;
     &:hover {
-      background: $main-light-color;
-      border-color: $main-light-color;
+      background: $dark-main-color;
     }
     &:active {
-      background: $main-dark-color;
-      border-color: $main-dark-color;
+      background: $darker-main-color;
     }
   }
   &-danger {
-    border-color: $default-danger;
-    background: $default-danger;
-    color: #fff;
+    box-shadow: $default-box-shadow;
+    background: $default-red;
+    color: $white;
     &:hover {
-      background: $light-danger;
-      border-color: $light-danger;
+      background: $dark-red;
     }
     &:active {
-      background: $dark-danger;
-      border-color: $dark-danger;
+      background: $darker-red;
     }
   }
   &-large {
@@ -71,6 +65,11 @@
     border-radius: 50%;
     padding: 0;
     width: 32px;
+  }
+  &:disabled {
+    background-color: $lighter-gray;
+    color: $default-gray;
+    cursor: auto;
   }
   .live-icon-circle-btn {
     font-size: 18px;

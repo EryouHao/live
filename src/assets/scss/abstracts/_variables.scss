@@ -1,17 +1,6 @@
-$main-dark-color: #52666f;
-$main-color: #788f9a;
-$main-light-color: #8ea7b3;
-$main-lighter-color: #b6c4cc;
-$main-lightest-color: #eaf1f5;
+@import './_colors';
 
-$dark-grey: #333;
-$default-grey: #666;
-$light-grey: #999;
-$lighter-grey: #ccc;
-$lightest-grey: #eee;
 
-$dark-danger: #b1272e;
-$default-danger: #e8333c;
-$light-danger: #f3646b;
-$lighter-danger: #ccc;
-$lightest-danger: #eee;
+$btn-border-radius: 2px;
+$border-box-shadow: inset 0 0 0 1px $light-gray;
+$default-box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);

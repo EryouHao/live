@@ -7,6 +7,8 @@
     "dev": "vuepress dev docs",
     "serve": "vue-cli-service serve",
     "build": "vue build -t lib --name live src/index.js",
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "sh deploy.sh",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
