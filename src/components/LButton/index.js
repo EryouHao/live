@@ -1,11 +1,7 @@
 import LButton from './LButton.vue'
-
-// LButton.install = function (Vue) {
-//   Vue.component(LButton.name, LButton)
-// }
-
-// export default LButton
+import LButtonGroup from './LButtonGroup.vue'
 
 export default (Vue) => {
   Vue.component(LButton.name, LButton)
+  Vue.component(LButtonGroup.name, LButtonGroup)
 }

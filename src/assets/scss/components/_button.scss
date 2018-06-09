@@ -12,6 +12,8 @@
   border-radius: $btn-border-radius;
   text-align: center;
   overflow: hidden;
+  
+  // type
   &-default {
     &:hover {
       background: $lighter-gray;
@@ -42,6 +44,23 @@
       background: $darker-red;
     }
   }
+  &-text {
+    box-shadow: none;
+    .text {
+      border-bottom: 1px dotted $light-gray;
+    }
+    &:hover {
+      color: $dark-main-color;
+      .text {
+        border-bottom: 1px dotted $dark-main-color;
+      }
+    }
+    &:active {
+      color: $darker-main-color;
+    }
+  }
+
+  // size
   &-large {
     height: 40px;
     &.live-btn-circle {
@@ -63,6 +82,14 @@
       }
     }
   }
+
+  // long
+  &-long {
+    width: 100%;
+    display: block;
+  }
+
+  // shape
   &-circle {
     border-radius: 50%;
     padding: 0;
@@ -73,10 +100,17 @@
     color: $default-gray;
     cursor: auto;
   }
-  &-long {
-    width: 100%;
-    display: block;
+  .live-icon-circle-btn {
+    font-size: 18px;
+    line-height: 1.15;
   }
+  .live-icon-btn {
+    margin-right: 4px;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  // loading
   .icon-loading {
     position: absolute;
     top: 0;
@@ -103,13 +137,5 @@
       opacity: 0;
     }
   }
-  .live-icon-circle-btn {
-    font-size: 18px;
-    line-height: 1.15;
-  }
-  .live-icon-btn {
-    margin-right: 4px;
-    font-size: 14px;
-    vertical-align: middle;
-  }
+  
 }
