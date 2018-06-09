@@ -4,9 +4,11 @@ import 'font-awesome/css/font-awesome.css'
 
 import './assets/scss/main.scss'
 import LButton from './components/LButton'
+import LInput from './components/LInput'
 
 const components = [
   LButton,
+  LInput,
 ]
 
 // const install = function (Vue) {

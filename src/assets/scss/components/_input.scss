@@ -1,0 +1,65 @@
+.live-input-container {
+  box-shadow: $default-border-box-shadow;
+  border-radius: $input-border-radius;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  height: 32px;
+  padding: 1px;
+  font-size: 14px;
+  display: flex;
+  color: $default-text-color;
+  line-height: 1.5;
+  &:hover {
+    box-shadow: $dark-border-box-shadow;
+  }
+  &.is-focus {
+    box-shadow: $main-border-box-shadow;
+  }
+  &.is-large {
+    height: 40px;
+  }
+  &.is-small {
+    height: 24px;
+    font-size: 12px;
+  }
+  .live-input-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .live-holder {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    line-height: 1.5;
+    color: $default-gray;
+    user-select: none;
+    cursor: text;
+    display: flex;
+    align-items: center;
+  }
+  .live-input {
+    border: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    transition: all 0.2s;
+    padding: 4px 8px;
+  }
+  .prefix {
+    padding: 4px 0 4px 8px;
+  }
+  .suffix {
+    padding: 4px 8px 4px 0;
+    position: relative;
+    .live-btn {
+      position: absolute;
+      right: -1px;
+      top: -1px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
