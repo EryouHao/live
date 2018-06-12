@@ -1,6 +1,6 @@
 <template>
   <div class="select-demo">
-    <l-select></l-select>
+    <l-select style="width: 200px;"></l-select>
   </div>
 </template>
 
