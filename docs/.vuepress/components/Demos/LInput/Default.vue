@@ -2,6 +2,8 @@
   <div class="input-demo">
     <l-input class="demo"></l-input>
     <l-input class="demo" placeholder="Username"></l-input>
+    <l-input class="demo" v-model="text"></l-input>
+    {{ text }}
     <l-input class="demo" placeholder="Username">
       <span slot="prefix"><i class="fa fa-user"></i></span>
     </l-input>
@@ -25,6 +27,7 @@
 export default {
   data() {
     return {
+      text: 'Live UI',
     }
   },
 }

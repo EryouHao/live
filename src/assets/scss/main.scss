@@ -1,3 +1,7 @@
 @import './base';
 @import './abstracts/index';
 @import './components/index';
+
+body, input {
+  color: $default-text-color;
+}

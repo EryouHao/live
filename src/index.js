@@ -7,6 +7,8 @@ import LButton from './components/LButton'
 import LInput from './components/LInput'
 import LSelect from './components/LSelect'
 
+import ClickOutside from './directives/click-outside'
+
 const components = [
   LButton,
   LInput,
@@ -17,6 +19,7 @@ const Live = {
   install(Vue, options) {
     Object.values(components).forEach((component) => {
       Vue.use(component)
+      Vue.directive('click-outside', ClickOutside)
     })
   },
 }

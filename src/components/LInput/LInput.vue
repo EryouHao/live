@@ -9,6 +9,7 @@
         @focus="isFocus = true"
         @blur="isFocus =false"
         type="text"
+        :value="value"
         class="live-input"
         @input="bindValue($event.target.value)"
       >
@@ -28,6 +29,10 @@ export default {
   props: {
     placeholder: String,
     size: String,
+    value: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {
