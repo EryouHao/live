@@ -26,6 +26,8 @@
     position: absolute;
     top: 100%;
     box-shadow: 0 0 3px #eee;
-    width: 100%;
+    // min-width: 100%;
+    background: $white;
+    transform: translateY(4px);
   }
 }

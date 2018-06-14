@@ -8,8 +8,8 @@
         <li>选项二</li>
         <li>选项三</li>
         <li>选项四</li>
-        <li>选项五</li>
-      </ul>  
+        <li>选项五选项五选项五选项五选项五选项五选项五</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -17,6 +17,9 @@
 <script>
 export default {
   name: 'LSelect',
+  props: {
+
+  },
   data() {
     return {
     }

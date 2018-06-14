@@ -282,3 +282,10 @@ progress {
 summary {
 	display: list-item;
 }
+
+ul {
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
