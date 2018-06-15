@@ -5,7 +5,7 @@
   border-radius: $select-border-radius;
   padding: 1px;
   position: relative;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
@@ -45,12 +45,16 @@
   min-width: 100%;
   background: $white;
   transform: translateY(4px);
+  z-index: 100;
   .live-option {
     padding: 4px 8px;
     cursor: pointer;
     transition: all 0.2s;
-    &:hover {
+    &:hover, &.is-hover {
       background: $lighter-gray;
+    }
+    &.is-active {
+      color: $main-color;
     }
   }
 }

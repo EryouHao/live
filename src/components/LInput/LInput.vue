@@ -37,7 +37,6 @@ export default {
   data() {
     return {
       isFocus: false,
-      value: null,
     }
   },
   computed: {
@@ -60,7 +59,6 @@ export default {
   },
   methods: {
     bindValue(value) {
-      this.value = value
       this.$emit('input', value)
     },
   },
