@@ -45,7 +45,6 @@ export default {
   watch: {
     hoverIndex(val) {
       this.hIndex = val
-      console.log('watch: ', this.hIndex)
     },
   },
 }
