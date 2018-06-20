@@ -29,6 +29,7 @@ module.exports = {
           '/components/button',
           '/components/input',
           '/components/select',
+          '/components/radio',
         ],
       },
     ],

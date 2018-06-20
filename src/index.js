@@ -6,6 +6,7 @@ import './assets/scss/main.scss'
 import LButton from './components/LButton'
 import LInput from './components/LInput'
 import LSelect from './components/LSelect'
+import LRadio from './components/LRadio'
 
 import ClickOutside from './directives/click-outside'
 
@@ -13,6 +14,7 @@ const components = [
   LButton,
   LInput,
   LSelect,
+  LRadio,
 ]
 
 const Live = {
