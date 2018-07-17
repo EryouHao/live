@@ -34,6 +34,7 @@ module.exports = {
           '/components/input',
           '/components/select',
           '/components/radio',
+          '/components/date-picker',
         ],
       },
     ],

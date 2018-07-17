@@ -12,6 +12,7 @@
         :value="value"
         class="live-input"
         @input="bindValue($event.target.value)"
+        :readonly="readonly"
       >
       <transition name="slide-left-fade">
         <div
@@ -36,6 +37,10 @@ export default {
     value: {
       type: String,
       default: '',
+    },
+    readonly: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
