@@ -2,8 +2,12 @@ module.exports = {
   title: 'Live UI',
   description: 'Live UI',
   host: 'localhost',
+  port: '9090',
   base: '/live/',
   docsDir: 'docs',
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.png' }]
+  ],
   siteConfig: {
     links: {
       github: 'https://github.com/EryouHao/live',
