@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import LSelectOptions from './LSelectOptions'
+import LSelectOptions from './LSelectOptions.vue'
 
 export default {
   name: 'LSelect',
@@ -70,15 +70,15 @@ export default {
   },
   methods: {
     initText() {
-      let _activeIndex = -1
-      this.options.filter((item, index) => {
+      let activeIndex = -1
+      this.options.forEach((item, index) => {
         if (item.value === this.value) {
-          _activeIndex = index
+          activeIndex = index
         }
       })
-      this.activeIndex = _activeIndex
-      this.hoverIndex = _activeIndex
-      this.text = _activeIndex > -1 ? this.options[_activeIndex].text : ''
+      this.activeIndex = activeIndex
+      this.hoverIndex = activeIndex
+      this.text = activeIndex > -1 ? this.options[activeIndex].text : ''
       console.log(this.activeIndex, this.hoverIndex)
     },
     optionClick(value) {
@@ -89,7 +89,7 @@ export default {
         return
       }
       const options = this.filteredOptions.length > 0 ? this.filteredOptions : this.options
-      const selectedItem = options.filter((item) => item.value === value)[0]
+      const selectedItem = options.filter(item => item.value === value)[0]
       this.activeIndex = options.indexOf(selectedItem)
       this.hoverIndex = this.activeIndex
       this.text = selectedItem.text
@@ -128,11 +128,11 @@ export default {
       if (orientation === 'next') {
         this.hoverIndex === options.length - 1
           ? this.hoverIndex = 0
-          : this.hoverIndex++
+          : this.hoverIndex += 1
       } else {
         this.hoverIndex === 0
           ? this.hoverIndex = options.length - 1
-          : this.hoverIndex--
+          : this.hoverIndex -= 1
       }
       this.selectedValue = options[this.hoverIndex].value
     },

@@ -42,7 +42,8 @@ module.exports = {
         "allowShortCircuit": true,
         "allowTernary": true
       }
-    ]
+    ],
+    "max-len": ["error", { "code": 160 }],
   },
   parserOptions: {
     parser: 'babel-eslint'

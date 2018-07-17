@@ -29,12 +29,12 @@ export default {
   computed: {
     classes() {
       return [{
-          'live-btn': true,
-          [`live-btn-${this.type}`]: !!this.type,
-          [`live-btn-${this.size}`]: !!this.size,
-          [`live-btn-${this.shape}`]: !!this.shape,
-          'live-btn-long': !!this.long,
-          'live-btn-loading': !!this.loading,
+        'live-btn': true,
+        [`live-btn-${this.type}`]: !!this.type,
+        [`live-btn-${this.size}`]: !!this.size,
+        [`live-btn-${this.shape}`]: !!this.shape,
+        'live-btn-long': !!this.long,
+        'live-btn-loading': !!this.loading,
       }]
     },
   },

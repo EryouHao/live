@@ -14,7 +14,11 @@
         @input="bindValue($event.target.value)"
       >
       <transition name="slide-left-fade">
-        <div v-if="placeholder && !isFocus && !value" class="live-holder" @click="$refs.input.focus()">{{ placeholder }}</div>
+        <div
+          v-if="placeholder && !isFocus && !value"
+          class="live-holder"
+          @click="$refs.input.focus()"
+        >{{ placeholder }}</div>
       </transition>
     </div>
     <div :class="suffixClasses">
