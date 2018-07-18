@@ -1,6 +1,6 @@
 <template>
   <div class="live-date-picker-container" v-click-outside="hide" @click="visible = true">
-    <l-input readonly style="width: 240px;">
+    <l-input readonly style="width: 240px;" v-model="selectedDate">
       <span slot="prefix"><i class="fa fa-calendar-o"></i></span>
     </l-input>
     <transition name="fade-select">
@@ -23,7 +23,7 @@
             <div class="week" v-for="item in weeksLabel" :key="item">{{ item }}</div>
           </div>
           <div class="days">
-            <div class="day" :class="{ 'active': !!day }" v-for="(day, index) in tableDays" :key="index">{{ day }}</div>
+            <div class="day" @click.stop="selectDate(day)" :class="{ 'active': !!day }" v-for="(day, index) in tableDays" :key="index">{{ day }}</div>
           </div>
         </div>
       </div>
@@ -101,6 +101,10 @@ export default {
         this.offSetYear += 1
         this.offSetMonth = this.nowMonth - 12 - 1
       }
+    },
+    selectDate(day) {
+      this.selectedDate = `${this.currentYear}-${this.currentMonth}-${day}`
+      this.visible = false
     },
   },
 }
