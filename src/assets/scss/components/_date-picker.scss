@@ -4,7 +4,7 @@
   
   .live-calendar-container {
     width: 284px;
-    height: 286px;
+    height: 324px;
     position: absolute;
     top: 100%;
     left: 0;
@@ -82,8 +82,8 @@
         text-align: center;
         color: $black;
         transition: all 0.3s;
-        cursor: pointer;
-        &:hover {
+        &.active:hover {
+          cursor: pointer;
           background: $dark-main-color;
           color: $white;
           box-shadow: $default-box-shadow;

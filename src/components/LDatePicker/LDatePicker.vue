@@ -7,13 +7,13 @@
       <div class="live-calendar-container" v-if="visible">
         <div class="live-calendar-header">
           <div class="year-month">
-            2018 年 07月
+            {{ currentYear }} 年 {{ currentMonth }} 月
           </div>
           <div class="btn-container">
-            <span class="btn-jump btn-jump-left">
+            <span class="btn-jump btn-jump-left" @click="prev">
               <i class="fa fa-angle-left arrow-left"></i>
             </span>
-            <span class="btn-jump btn-jump-right">
+            <span class="btn-jump btn-jump-right" @click="next">
               <i class="fa fa-angle-right arrow-right"></i>
             </span>
           </div>
@@ -23,7 +23,7 @@
             <div class="week" v-for="item in weeksLabel" :key="item">{{ item }}</div>
           </div>
           <div class="days">
-            <div class="day" v-for="i in 30" :key="i">{{ i }}</div>
+            <div class="day" :class="{ 'active': !!day }" v-for="(day, index) in tableDays" :key="index">{{ day }}</div>
           </div>
         </div>
       </div>
@@ -43,11 +43,64 @@ export default {
     return {
       weeksLabel: ['日', '一', '二', '三', '四', '五', '六'],
       visible: false,
+      now: new Date(),
+      selectedDate: null,
+      offSetYear: 0,
+      offSetMonth: 0,
     }
+  },
+  computed: {
+    currentYear() {
+      return this.now.getFullYear() + this.offSetYear
+    },
+    nowMonth() {
+      return this.now.getMonth() + 1
+    },
+    currentMonth() {
+      return this.nowMonth + this.offSetMonth
+    },
+    tableDays() {
+      const list = []
+      const LIST_LENGTH = 42
+
+      // Current month length
+      const date = new Date(this.currentYear, this.currentMonth, 0)
+      const currentMonthLength = date.getDate()
+
+      // The first day of the current month is the day of the week
+      const firstDayOfMonth = new Date(this.currentYear, this.currentMonth - 1, 1)
+      const weekIndex = firstDayOfMonth.getDay()
+
+      for (let i = 0; i < LIST_LENGTH; i += 1) {
+        if (i >= weekIndex && i < weekIndex + currentMonthLength) {
+          list.push((i - weekIndex) + 1)
+        } else {
+          list.push(null)
+        }
+      }
+
+      return list
+    },
   },
   methods: {
     hide() {
       this.visible = false
+    },
+    prev() {
+      if (this.currentMonth > 1) {
+        this.offSetMonth -= 1
+      } else {
+        this.offSetYear -= 1
+        this.offSetMonth = 12 - this.nowMonth
+      }
+    },
+    next() {
+      if (this.currentMonth < 12) {
+        this.offSetMonth += 1
+      } else {
+        this.offSetYear += 1
+        this.offSetMonth = this.nowMonth - 12 - 1
+      }
     },
   },
 }
