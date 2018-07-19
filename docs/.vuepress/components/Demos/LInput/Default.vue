@@ -14,6 +14,10 @@
       <l-button slot="suffix">Search</l-button>
     </l-input>
     <l-input class="demo" placeholder="Please input...">
+      <span slot="prefix"><i class="fa fa-user"></i></span>
+      <span slot="suffix"><i class="fa fa-search"></i></span>
+    </l-input>
+    <l-input class="demo" placeholder="Please input...">
       <l-button type="primary" slot="suffix">Search</l-button>
     </l-input>
     <h3>不同大小</h3>

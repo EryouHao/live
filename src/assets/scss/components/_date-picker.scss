@@ -1,6 +1,19 @@
 .live-date-picker-container {
   display: inline-block;
   position: relative;
+
+  .live-date-picker-input {
+    .btn-close {
+      opacity: 0;
+      transition: all 0.2s;
+    }
+    &:hover {
+      .btn-close {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+  }
   
   .live-calendar-container {
     width: 284px;

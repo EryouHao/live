@@ -1,8 +1,13 @@
 <template>
   <div class="date-picker-demo">
     <div class="demo">
-      <l-date-picker v-model="date"></l-date-picker>
-      <div>选中的值：{{ date }}</div>
+      <l-date-picker v-model="date1" placeholder="YYYY-MM-DD"></l-date-picker>
+      <div>选中的值：{{ date1 }}</div>
+    </div>
+    <h3>格式化</h3>
+    <div class="demo">
+      <l-date-picker v-model="date2" format="YYYY/MM/DD"></l-date-picker>
+      <div>选中的值：{{ date2 }}</div>
     </div>
   </div>
 </template>
@@ -11,7 +16,8 @@
 export default {
   data() {
     return {
-      date: null,
+      date1: null,
+      date2: null,
     }
   },
 }

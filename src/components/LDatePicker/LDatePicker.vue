@@ -1,7 +1,13 @@
 <template>
   <div class="live-date-picker-container" v-click-outside="hide" @click="visible = true">
-    <l-input readonly style="width: 240px;" v-model="selectedDate">
+    <l-input readonly class="live-date-picker-input" style="width: 240px;" v-model="selectedDate" :placeholder="placeholder">
       <span slot="prefix"><i class="fa fa-calendar-o"></i></span>
+      <span
+        slot="suffix"
+        class="btn-close"
+        v-show="selectedDate"
+        @click.stop="reset"
+      ><i class="material-icons">clear</i></span>
     </l-input>
     <transition name="fade-select">
       <div class="live-calendar-container" v-if="visible">
@@ -32,10 +38,15 @@
 </template>
 
 <script>
+import dayjs from 'dayjs'
 import LInput from '../LInput/LInput.vue'
 
 export default {
   name: 'LDatePicker',
+  props: {
+    format: String,
+    placeholder: String,
+  },
   components: {
     LInput,
   },
@@ -105,8 +116,13 @@ export default {
     selectDate(day) {
       const displayMonth = this.currentMonth > 9 ? this.currentMonth : `0${this.currentMonth}`
       const displayDay = day > 9 ? day : `0${day}`
-      this.selectedDate = `${this.currentYear}-${displayMonth}-${displayDay}`
+      const selectedDate = `${this.currentYear}-${displayMonth}-${displayDay}`
+      this.selectedDate = this.format ? dayjs(selectedDate).format(`${this.format}`) : selectedDate
+      this.$emit('input', this.selectedDate)
       this.visible = false
+    },
+    reset() {
+      this.selectedDate = null
       this.$emit('input', this.selectedDate)
     },
   },
