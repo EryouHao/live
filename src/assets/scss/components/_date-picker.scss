@@ -19,6 +19,10 @@
     display: flex;
     justify-content: space-between;
     line-height: 32px;
+    
+    .year-month {
+      font-weight: bold;
+    }
 
     .btn-container {
       .btn-jump {

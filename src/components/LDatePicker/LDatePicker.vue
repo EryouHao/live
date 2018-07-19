@@ -103,8 +103,11 @@ export default {
       }
     },
     selectDate(day) {
-      this.selectedDate = `${this.currentYear}-${this.currentMonth}-${day}`
+      const displayMonth = this.currentMonth > 9 ? this.currentMonth : `0${this.currentMonth}`
+      const displayDay = day > 9 ? day : `0${day}`
+      this.selectedDate = `${this.currentYear}-${displayMonth}-${displayDay}`
       this.visible = false
+      this.$emit('input', this.selectedDate)
     },
   },
 }

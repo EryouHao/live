@@ -1,7 +1,8 @@
 <template>
   <div class="date-picker-demo">
     <div class="demo">
-      <l-date-picker></l-date-picker>
+      <l-date-picker v-model="date"></l-date-picker>
+      <div>选中的值：{{ date }}</div>
     </div>
   </div>
 </template>
@@ -9,7 +10,9 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      date: null,
+    }
   },
 }
 </script>
