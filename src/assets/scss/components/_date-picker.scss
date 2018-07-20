@@ -47,7 +47,7 @@
         cursor: pointer;
         &.btn-jump-left {
           .arrow-left {
-            transition: all 0.3s;
+            transition: all 0.2s;
           }
           &:hover {
             .arrow-left {
@@ -58,7 +58,7 @@
         }
         &.btn-jump-right {
           .arrow-right {
-            transition: all 0.3s;
+            transition: all 0.2s;
           }
           &:hover {
             .arrow-right {
