@@ -29,7 +29,13 @@
             <div class="week" v-for="item in weeksLabel" :key="item">{{ item }}</div>
           </div>
           <div class="days">
-            <div class="day" @click.stop="selectDate(day)" :class="{ 'active': !!day }" v-for="(day, index) in tableDays" :key="index">{{ day }}</div>
+            <div
+              class="day"
+              @click.stop="selectDate(day)"
+              :class="{ 'active': !!day, 'today': isToday(day) }"
+              v-for="(day, index) in tableDays"
+              :key="index"
+            >{{ day }}</div>
           </div>
         </div>
       </div>
@@ -124,6 +130,11 @@ export default {
     reset() {
       this.selectedDate = null
       this.$emit('input', this.selectedDate)
+    },
+    isToday(day) {
+      const currentDate = dayjs(`${this.currentYear}-${this.currentMonth}-${day}`).format('YYYY-MM-DD')
+      const nowDate = dayjs().format('YYYY-MM-DD')
+      return currentDate === nowDate
     },
   },
 }

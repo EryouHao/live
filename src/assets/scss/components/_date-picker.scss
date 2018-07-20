@@ -99,9 +99,12 @@
         text-align: center;
         color: $black;
         transition: all 0.3s;
+        &.today {
+          color: $main-color;
+        }
         &.active:hover {
           cursor: pointer;
-          background: $dark-main-color;
+          background: $main-color;
           color: $white;
           box-shadow: $default-box-shadow;
           border-radius: $btn-border-radius;
