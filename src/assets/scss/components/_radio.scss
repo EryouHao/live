@@ -1,0 +1,15 @@
+.live-radio-container {
+  display: inline-flex;
+  align-items: center;
+  
+  .live-radio-icon {
+    width: 16px;
+    height: 16px;
+    box-shadow: $default-border-box-shadow;
+    border-radius: 50%;
+  }
+  
+  .live-radio-input {
+    opacity: 0;
+  }
+}

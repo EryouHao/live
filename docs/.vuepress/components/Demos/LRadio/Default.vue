@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <l-radio></l-radio>
+    <l-radio>选项一</l-radio>
   </div>
 </template>
 
