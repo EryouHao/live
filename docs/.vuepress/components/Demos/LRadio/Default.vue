@@ -1,6 +1,8 @@
 <template>
   <div class="">
-    <l-radio>选项一</l-radio>
+    <l-radio v-model="radioValue" l-value="1">选项一</l-radio>
+    <l-radio v-model="radioValue" l-value="2">选项二</l-radio>
+    值：{{ radioValue }}
   </div>
 </template>
 
@@ -8,6 +10,7 @@
 export default {
   data() {
     return {
+      radioValue: null,
     }
   },
 }

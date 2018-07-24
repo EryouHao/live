@@ -7,6 +7,21 @@
     height: 16px;
     box-shadow: $default-border-box-shadow;
     border-radius: 50%;
+    position: relative;
+    &.is-check {
+      box-shadow: $main-border-box-shadow;
+      &:after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: $main-color;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        border-radius: 50%;
+      }
+    }
   }
   
   .live-radio-input {

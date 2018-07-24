@@ -1,11 +1,12 @@
 <template>
   <div class="live-radio-container">
-    <div class="live-radio-icon">
+    <div class="live-radio-icon" :class="{ 'is-check': isChecked }">
       <input
         class="live-radio-input"
         type="radio"
+        v-bind="$attrs"
         :checked="isChecked"
-        @change="handleChange"
+        v-on="listeners"
       >
     </div>
     <label>
@@ -18,17 +19,28 @@
 export default {
   name: 'LRadio',
   props: {
-    value: [String|Number|Boolean],
+    value: {},
+    lValue: {},
   },
   data() {
     return {
-      isChecked: false,
     }
   },
-  methods: {
-    handleChange(event) {
-      this.isChecked = event.target.checked
+  computed: {
+    listeners() {
+      return {
+        input: event => this.$emit('input', this.lValue)
+      }
     },
+    isChecked() {
+      return this.lValue === this.value
+    },
+  },
+  mounted() {
+    console.log('value', this.value)
+  },
+  methods: {
+
   },
 }
 </script>
