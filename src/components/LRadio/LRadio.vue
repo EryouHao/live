@@ -1,5 +1,5 @@
 <template>
-  <div class="live-radio-container">
+  <div class="live-radio-container" @click="handleChange">
     <div class="live-radio-icon" :class="{ 'is-check': isChecked }">
       <input
         class="live-radio-input"
@@ -9,7 +9,7 @@
         v-on="listeners"
       >
     </div>
-    <label>
+    <label class="live-radio-label">
       <slot></slot>
     </label>
   </div>
@@ -36,11 +36,10 @@ export default {
       return this.lValue === this.value
     },
   },
-  mounted() {
-    console.log('value', this.value)
-  },
   methods: {
-
+    handleChange() {
+      this.$emit('input', this.lValue)
+    },
   },
 }
 </script>

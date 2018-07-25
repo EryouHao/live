@@ -1,6 +1,7 @@
 .live-radio-container {
   display: inline-flex;
   align-items: center;
+  cursor: pointer;
   
   .live-radio-icon {
     width: 16px;
@@ -8,23 +9,38 @@
     box-shadow: $default-border-box-shadow;
     border-radius: 50%;
     position: relative;
+    transition: all 0.2s;
+    &:after {
+      transform: rotateY(90deg);
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      background: $main-color;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      border-radius: 50%;
+    }
     &.is-check {
       box-shadow: $main-border-box-shadow;
       &:after {
-        content: '';
-        display: block;
-        width: 10px;
-        height: 10px;
-        background: $main-color;
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        border-radius: 50%;
+        transform: rotateY(0);
       }
+    }
+  }
+
+  &:hover {
+    .live-radio-icon:not(.is-check) {
+      box-shadow: $dark-border-box-shadow;
     }
   }
   
   .live-radio-input {
     opacity: 0;
+  }
+
+  .live-radio-label {
+    cursor: pointer;
   }
 }
