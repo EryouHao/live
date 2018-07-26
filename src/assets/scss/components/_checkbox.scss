@@ -1,0 +1,51 @@
+.live-checkbox-container {
+  display: inline-flex;
+  align-items: center;
+  padding-right: 2px;
+  cursor: pointer;
+
+  .live-checkbox-icon {
+    width: 16px;
+    height: 16px;
+    box-shadow: $default-border-box-shadow;
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.2s;
+    margin: 0 2px;
+
+    .live-icon {
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      line-height: 1;
+      font-weight: bold;
+      font-size: 14px;
+      color: $main-color;
+      opacity: 0;
+      transform: scale(1.4);
+      transition: transform 0.3s;
+    }
+
+    &.is-check {
+      box-shadow: $main-border-box-shadow;
+      .live-icon {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &:hover {
+    .live-checkbox-icon:not(.is-check) {
+      box-shadow: $dark-border-box-shadow;
+    }
+  }
+
+  .live-checkbox-input {
+    opacity: 0;
+  }
+
+  .live-checkbox-label {
+    cursor: pointer;
+  }
+}
