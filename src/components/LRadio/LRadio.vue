@@ -29,7 +29,7 @@ export default {
   computed: {
     listeners() {
       return {
-        input: event => this.$emit('input', this.lValue)
+        input: event => this.$emit('input', this.lValue),
       }
     },
     isChecked() {
