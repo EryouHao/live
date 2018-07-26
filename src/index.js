@@ -7,6 +7,7 @@ import LButton from './components/LButton'
 import LInput from './components/LInput'
 import LSelect from './components/LSelect'
 import LRadio from './components/LRadio'
+import LCheckbox from './components/LCheckbox'
 import LDatePicker from './components/LDatePicker'
 
 import ClickOutside from './directives/click-outside'
@@ -16,6 +17,7 @@ const components = [
   LInput,
   LSelect,
   LRadio,
+  LCheckbox,
   LDatePicker,
 ]
 
