@@ -1,0 +1,17 @@
+.live-tooltip-container {
+  display: inline-block;
+  position: relative;
+
+  .live-tooltip {
+    position: absolute;
+    top: -100%;
+    transform: translateY(-8px);
+    left: 0;
+    padding: 8px;
+    box-shadow: 0 0 3px #ccc;
+    white-space: nowrap;
+    background: #fff;
+    border-radius: 2px;
+    font-size: 14px;
+  }
+}

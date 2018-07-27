@@ -36,6 +36,7 @@ module.exports = {
           '/components/radio',
           '/components/checkbox',
           '/components/date-picker',
+          '/components/tooltip',
         ],
       },
     ],
