@@ -18,6 +18,10 @@
           change 传值：{{ changeValue }}
         </div>
       </li>
+      <li>
+        <l-checkbox v-model="value4" disabled>禁用的选项</l-checkbox>
+        <l-checkbox v-model="value5" readonly>只读的选项</l-checkbox>
+      </li>
     </ul>
 
   </div>
@@ -30,6 +34,8 @@ export default {
       values: [],
       value2: null,
       value3: null,
+      value4: null,
+      value5: null,
       changeValue: null,
     }
   },

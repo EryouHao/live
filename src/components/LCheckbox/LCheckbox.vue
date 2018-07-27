@@ -1,5 +1,5 @@
 <template>
-  <div class="live-checkbox-container" @click="handleChange">
+  <div class="live-checkbox-container" @click="handleChange" :class="{ 'is-disabled': disabled }">
     <div class="live-checkbox-icon" :class="{ 'is-check': isChecked }">
       <input type="checkbox" class="live-checkbox-input">
       <i class="material-icons live-icon">check</i>
@@ -61,7 +61,7 @@ export default {
       const newValue = this.checked === this.value ? null : this.value
       this.$emit('input', newValue)
       this.$emit('change', newValue)
-    }
+    },
   },
 }
 </script>
