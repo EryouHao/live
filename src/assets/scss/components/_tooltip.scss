@@ -8,10 +8,22 @@
     transform: translateY(-8px);
     left: 0;
     padding: 8px;
-    box-shadow: 0 0 3px #ccc;
+    box-shadow: $tip-box-shadow;
     white-space: nowrap;
     background: #fff;
     border-radius: 2px;
     font-size: 14px;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border: 4px solid transparent;
+      border-bottom-color: $white;
+      border-left-color: $white;
+      background: $white;
+      box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.06);
+      transform: rotateZ(135deg) translateX(3px);
+    }
   }
 }
