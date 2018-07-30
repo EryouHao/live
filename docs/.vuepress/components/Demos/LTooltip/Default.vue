@@ -7,14 +7,25 @@
         </l-tooltip>
       </div>
       <div class="item">
-        <l-button>上</l-button>
+        <l-tooltip content="这是提示文字" placement="top">
+          <l-button>上</l-button>
+        </l-tooltip>
       </div>
       <div class="item">
-        <l-button>下</l-button>
+        <l-tooltip content="这是提示文字" placement="bottom">
+          <l-button>下</l-button>
+        </l-tooltip>
       </div>
       <div class="item">
-        <l-button>右</l-button>
+        <l-tooltip content="这是提示文字" placement="right">
+          <l-button>右</l-button>
+        </l-tooltip>
       </div>
+      <!-- <div class="item">
+        <l-tooltip content="这是提示文字，这是提示文字，这是提示文字，这是提示文字，这是提示文字，这是提示文字" placement="right">
+          <l-button>长内容</l-button>
+        </l-tooltip>
+      </div> -->
     </div>
   </div>
 </template>

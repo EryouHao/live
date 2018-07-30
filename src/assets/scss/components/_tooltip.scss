@@ -4,26 +4,60 @@
 
   .live-tooltip {
     position: absolute;
-    top: -100%;
-    transform: translateY(-8px);
-    left: 0;
     padding: 8px;
     box-shadow: $tip-box-shadow;
     white-space: nowrap;
     background: #fff;
     border-radius: 2px;
     font-size: 14px;
-
+    z-index: 1000;
     &:after {
       content: '';
-      display: block;
       position: absolute;
-      border: 4px solid transparent;
-      border-bottom-color: $white;
-      border-left-color: $white;
-      background: $white;
-      box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.06);
-      transform: rotateZ(135deg) translateX(3px);
+      display: block;
+      background: transparent;
     }
+    &.is-left {
+      right: 100%;
+      transform: translateX(-4px);
+      &:after {
+        right: -4px;
+        top: 0;
+        height: 100%;
+        width: 4px;
+      }
+    }
+    &.is-top {
+      bottom: 100%;
+      transform: translateY(-4px);
+      &:after {
+        bottom: -4px;
+        width: 100%;
+        height: 4px;
+      }
+    }
+    &.is-bottom {
+      top: 100%;
+      transform: translateY(4px);
+      &:after {
+        top: -4px;
+        width: 100%;
+        height: 4px;
+      }
+    }
+    &.is-right {
+      left: 100%;
+      transform: translateX(4px);
+      &:after {
+        left: -4px;
+        top: 0;
+        height: 100%;
+        width: 4px;
+      }
+    }
+  }
+
+  .live-tooltip-item {
+    display: inline-block;
   }
 }
