@@ -2,15 +2,12 @@
   <div class="live-tooltip-container">
     <transition name="fade-select">
       <div
-        class="live-tooltip"
-        :class="`is-${placement}`"
-        :style="styles"
+        :class="classes"
+        :style="style"
         v-if="show"
         @mouseover="show = true"
         @mouseout="show = false"
-      >
-        {{ content }}
-      </div>
+      >{{ content }}</div>
     </transition>
     <div class="live-tooltip-item" ref="item" @mouseover="show = true" @mouseout="show = false">
       <slot></slot>
@@ -27,6 +24,8 @@ export default {
       type: String,
       default: 'top',
     },
+    dark: Boolean,
+    maxWidth: [Number, String],
   },
   data() {
     return {
@@ -35,18 +34,25 @@ export default {
     }
   },
   computed: {
-  },
-  mounted() {
-    console.log(this.$refs.item)
-    // this.setPosition(this.$refs.item, 'left')
-  },
-  methods: {
-    setPosition(dom, position) {
-      console.log(dom.getBoundingClientRect())
-      const { width } = dom.getBoundingClientRect()
-      this.styles = {
-        transform: `translateX(-${width}px)`,
+    classes() {
+      return [{
+        'live-tooltip': true,
+        'is-left': this.placement === 'left',
+        'is-right': this.placement === 'right',
+        'is-bottom': this.placement === 'bottom',
+        'is-top': this.placement === 'top',
+        'is-dark': this.dark,
+      }]
+    },
+    style() {
+      console.log(this.maxWidth)
+      if (this.maxWidth) {
+        return {
+          'max-width': `${this.maxWidth}px`,
+          'white-space': 'pre-wrap',
+        }
       }
+      return {}
     },
   },
 }

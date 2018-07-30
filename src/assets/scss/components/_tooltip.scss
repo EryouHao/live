@@ -7,9 +7,11 @@
     padding: 8px;
     box-shadow: $tip-box-shadow;
     white-space: nowrap;
+    width: max-content;
     background: #fff;
     border-radius: 2px;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.5;
     z-index: 1000;
     &:after {
       content: '';
@@ -54,6 +56,11 @@
         height: 100%;
         width: 4px;
       }
+    }
+    
+    &.is-dark {
+      background: $dark-gray;
+      color: $white;
     }
   }
 
