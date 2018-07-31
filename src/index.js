@@ -10,6 +10,7 @@ import LRadio from './components/LRadio'
 import LCheckbox from './components/LCheckbox'
 import LDatePicker from './components/LDatePicker'
 import LTooltip from './components/LTooltip'
+import LNotification from './components/LNotification'
 
 import ClickOutside from './directives/click-outside'
 
@@ -21,6 +22,7 @@ const components = [
   LCheckbox,
   LDatePicker,
   LTooltip,
+  LNotification,
 ]
 
 const Live = {
