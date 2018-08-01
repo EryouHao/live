@@ -1,0 +1,27 @@
+.live-notification-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 320px;
+  background: $white;
+  border-radius: 2px;
+  box-shadow: $default-border-box-shadow, $default-box-shadow;
+  
+  .live-notification-header {
+    display: flex;
+    justify-content: space-between;
+    
+    .live-notification-title {
+      flex: 1;
+      padding: 8px 16px;
+      font-weight: bold;
+    }
+    .close {
+      flex-shrink: 0;
+    }
+  }
+
+  .live-notification-body {
+    padding: 16px;
+  }
+}

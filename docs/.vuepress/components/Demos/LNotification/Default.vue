@@ -12,7 +12,10 @@ export default {
   methods: {
     show() {
       console.log('clicked')
-      this.$notification('hello')
+      this.$notification({
+        title: '提示',
+        content: '这里是内容',
+      })
     },
   },
 }

@@ -6,11 +6,12 @@ const NotificationConstructor = Vue.extend(LNotification)
 let nId = 1
 let instance
 
-const Notification = (content) => {
+const Notification = ({ title = '', content = '' }) => {
   const id = `live-notification${nId += 1}`
   instance = new NotificationConstructor({
     data: {
-      content: content,
+      title,
+      content,
     },
   })
   instance.id = id
