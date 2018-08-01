@@ -6,14 +6,16 @@ const NotificationConstructor = Vue.extend(LNotification)
 let nId = 1
 let instance
 
-const Notification = ({ title = '', content = '' }) => {
+const Notification = (options) => {
   const id = `live-notification${nId += 1}`
   instance = new NotificationConstructor({
-    data: {
-      title,
-      content,
-    },
+    data: options,
   })
+  // TODO: 更严谨的类型判断
+  if (typeof options.content === 'object') {
+    instance.$slots.default = [options.content]
+    options.content = ''
+  }
   instance.id = id
   instance.vm = instance.$mount()
   instance.vm.visible = true
@@ -24,9 +26,9 @@ const Notification = ({ title = '', content = '' }) => {
   // TODO: 多条通知位置下排, 通知类型：success、error、info
   return instance.vm
 }
+
 export default {
   install: () => {
     Vue.prototype.$notification = Notification
   },
 }
-

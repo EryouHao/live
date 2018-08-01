@@ -10,18 +10,28 @@
   .live-notification-header {
     display: flex;
     justify-content: space-between;
+    font-size: 16px;
     
     .live-notification-title {
       flex: 1;
-      padding: 8px 16px;
-      font-weight: bold;
+      padding: 16px 16px;
     }
     .close {
       flex-shrink: 0;
+      padding: 8px;
+      cursor: pointer;
+      height: 32px;
+      transition: all 0.3s;
+      &:hover {
+        color: $main-color;
+        transform: rotateZ(90deg);
+      }
     }
   }
 
   .live-notification-body {
-    padding: 16px;
+    padding: 0 16px 24px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
