@@ -1,6 +1,7 @@
 <template>
   <transition name="slide-top-fade">
     <div
+      ref="notification"
       class="live-notification-container"
       v-show="visible"
       @mouseover="clearTimer"
@@ -30,8 +31,11 @@ export default {
     return {
       visible: false,
       message: '',
+      autoClose: true,
       duration: 3000,
       timer: null,
+      position: 'top-right',
+      defaultIndex: 1000,
     }
   },
   mounted() {
@@ -39,9 +43,11 @@ export default {
   },
   methods: {
     setTimer() {
-      this.timer = setTimeout(() => {
-        this.close()
-      }, this.duration)
+      if (this.autoClose) {
+        this.timer = setTimeout(() => {
+          this.close()
+        }, this.duration)
+      }
     },
     clearTimer() {
       clearTimeout(this.timer)

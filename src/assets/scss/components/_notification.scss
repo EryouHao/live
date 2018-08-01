@@ -1,11 +1,19 @@
-.live-notification-container {
+.live-notification-wrapper {
   position: fixed;
   top: 24px;
   right: 24px;
   width: 320px;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+.live-notification-container {  
+  width: 320px;
   background: $white;
   border-radius: 2px;
   box-shadow: $default-border-box-shadow, $default-box-shadow;
+  transition: all 0.3s;
+  margin-bottom: 16px;
   
   .live-notification-header {
     display: flex;
@@ -24,7 +32,6 @@
       transition: all 0.3s;
       &:hover {
         color: $main-color;
-        transform: rotateZ(90deg);
       }
     }
   }
