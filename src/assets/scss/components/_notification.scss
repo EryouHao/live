@@ -2,19 +2,47 @@
   position: fixed;
   top: 24px;
   right: 24px;
-  width: 320px;
+  width: 358px;
   z-index: 1000;
   transition: all 0.3s;
 }
 
-.live-notification-container {  
-  width: 320px;
+.live-notification-container {
+  width: 358px;
   background: $white;
   border-radius: 2px;
-  box-shadow: $default-border-box-shadow, $default-box-shadow;
+  box-shadow: $notification-box-shadow;
   transition: all 0.3s;
   margin-bottom: 16px;
+  display: flex;
+  overflow: hidden;
   
+  .live-notification-icon-container {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    justify-content: center;
+    
+    .live-notification-icon {
+      width: 22px;
+      line-height: 1;
+      font-size: 22px;
+    }
+    &.is-success, &.is-error {
+      padding: 8px;
+      color: $white;
+    }
+    &.is-success {
+      background: $default-green;
+    }
+    &.is-error {
+      background: $default-red;
+    }
+  }
+
+  .live-nofication-content-container {
+    flex: 1;
+  }
   .live-notification-header {
     display: flex;
     justify-content: space-between;
@@ -22,7 +50,7 @@
     
     .live-notification-title {
       flex: 1;
-      padding: 16px 16px;
+      padding: 16px 16px 16px 8px;
     }
     .close {
       flex-shrink: 0;
@@ -37,8 +65,24 @@
   }
 
   .live-notification-body {
-    padding: 0 16px 24px;
+    padding: 0 16px 24px 8px;
     font-size: 14px;
     line-height: 1.5;
+
+    &.is-empty {
+      padding: 0;
+    }
+  }
+
+  // 主题
+  &.is-dark {
+    background: rgba(0, 0, 0, 0.7);
+    color: $white;
+
+    .live-notification-icon-container {
+      &.is-success, &.is-error {
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
   }
 }
