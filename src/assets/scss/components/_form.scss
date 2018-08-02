@@ -1,3 +1,16 @@
 .live-form-container {
 
 }
+
+.live-form-item-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  
+  .live-form-item-label {
+    font-size: 14px;
+    padding-bottom: 8px;
+    line-height: 1.5;
+  }
+
+}

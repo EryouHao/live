@@ -8,7 +8,7 @@
         ref="input"
         @focus="isFocus = true"
         @blur="isFocus =false"
-        type="text"
+        :type="type"
         :value="value"
         class="live-input"
         @input="bindValue($event.target.value)"
@@ -41,6 +41,10 @@ export default {
     readonly: {
       type: Boolean,
       default: false,
+    },
+    type: {
+      type: String,
+      default: 'text',
     },
   },
   data() {

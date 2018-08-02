@@ -1,7 +1,7 @@
 <template>
-  <div class="live-form-container">
-
-  </div>
+  <form class="live-form-container">
+    <slot></slot>
+  </form>
 </template>
 
 <script>
@@ -12,6 +12,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
