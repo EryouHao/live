@@ -14,6 +14,7 @@ module.exports = {
     },
   },
   themeConfig: {
+    repo: 'eryouhao/live',
     nav: [
       { text: '首页', link: '/' },
       { text: '文档', link: '/live/' },
