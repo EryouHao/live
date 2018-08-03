@@ -6,7 +6,7 @@ module.exports = {
   base: '/live/',
   docsDir: 'docs',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.png' }]
+    ['link', { rel: 'icon', href: '/favicon-blue.png' }]
   ],
   siteConfig: {
     links: {

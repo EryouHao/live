@@ -14,6 +14,8 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
+git config user.name = 'EryouHao'
+git config user.email = 'haoeryou@qq.com'
 git commit -m 'docs: update docs'
 
 # 如果发布到 https://<USERNAME>.github.io
