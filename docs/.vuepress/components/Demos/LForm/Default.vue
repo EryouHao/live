@@ -1,6 +1,11 @@
 <template>
   <div class="">
-    <l-form>
+    <div style="margin: 32px 0;">
+      <l-radio v-model="labelPosition" value="left">左对齐</l-radio>
+      <l-radio v-model="labelPosition" value="top">上对齐</l-radio>
+      <l-radio v-model="labelPosition" value="right">右对齐</l-radio>
+    </div>
+    <l-form :label-position="labelPosition" :label-width="80">
       <l-form-item label="用户名">
         <l-input placeholder="请输入" v-model="form.username"></l-input>
       </l-form-item>
@@ -25,7 +30,8 @@ export default {
         username: null,
         password: null,
         agree: true,
-      }
+      },
+      labelPosition: 'top',
     }
   },
 }

@@ -1,16 +1,39 @@
 .live-form-container {
 
-}
-
-.live-form-item-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 24px;
+  .live-form-item-container {
+    display: flex;
+    margin-bottom: 24px;
+    
+    .live-form-item-label {
+      font-size: 14px;
+      line-height: 1.5;
+      flex-shrink: 0;
+    }
+    .live-form-item-content {
+      flex: 1;
+    }
   
-  .live-form-item-label {
-    font-size: 14px;
-    padding-bottom: 8px;
-    line-height: 1.5;
   }
 
+  &.is-top {
+    .live-form-item-container {
+      flex-direction: column;
+    }
+    .live-form-item-label {
+      padding-bottom: 8px;
+    }
+  }
+
+  &.is-left, &.is-right {
+    .live-form-item-label {
+      padding-right: 16px;
+      line-height: 30px;
+    }
+  }
+
+  &.is-right {
+    .live-form-item-label {
+      text-align: right;
+    }
+  }
 }

@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+  margin-right: 4px;
   
   &.is-disabled {
     color: $default-gray;
@@ -14,7 +15,6 @@
     border-radius: 50%;
     position: relative;
     transition: all 0.2s;
-    margin: 0 2px;
     &:after {
       transform: scale(1.4);
       opacity: 0;
@@ -51,5 +51,6 @@
   .live-radio-label {
     cursor: pointer;
     user-select: none;
+    padding: 0 4px;
   }
 }
