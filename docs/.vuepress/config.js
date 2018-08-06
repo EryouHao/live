@@ -40,6 +40,7 @@ module.exports = {
           '/components/tooltip',
           '/components/notification',
           '/components/form',
+          '/components/dialog',
         ],
       },
     ],

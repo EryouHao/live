@@ -12,6 +12,7 @@ import LDatePicker from './components/LDatePicker'
 import LTooltip from './components/LTooltip'
 import LNotification from './components/LNotification'
 import LForm from './components/LForm'
+import LDialog from './components/LDialog'
 
 import ClickOutside from './directives/click-outside'
 
@@ -25,6 +26,7 @@ const components = [
   LTooltip,
   LNotification,
   LForm,
+  LDialog,
 ]
 
 const Live = {
