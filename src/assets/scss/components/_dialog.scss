@@ -1,0 +1,61 @@
+.live-dialog-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $dialog-background;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .live-dialog {
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    // border: 1px solid #000;
+    box-shadow: $dialog-box-shadow;
+    box-sizing: border-box;
+    border-radius: $dialog-border-radius;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+
+    .live-dialog-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      font-size: 18px;
+      flex-shrink: 0;
+
+      .dialog-title {
+        padding: 0 16px;
+        flex: 1;
+      }
+
+      .dialog-close {
+        margin-right: 8px;
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        border-radius: 50%;
+        flex-shrink: 0;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+    .live-dialog-content {
+      padding: 8px 16px 16px;
+      flex: 1;
+    }
+    .live-dialog-footer {
+      padding: 16px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+  }
+}
