@@ -1,24 +1,22 @@
 <template>
   <div class="live-dialog-container" v-show="value">
     <transition name="fade-select">
-      <div class="live-dialog" v-show="value" v-click-outside="close" :style="style">
+      <div class="live-dialog" v-show="value" v-click-outside="outSideClose" :style="style">
         <div class="live-dialog-header">
-          <div class="dialog-title">{{ title }}</div>
+          <div class="dialog-title">
+            <span v-if="!$slots.title">{{ title }}</span>
+            <slot name="title"></slot>
+          </div>
           <div class="dialog-close" @click="close">
             <i class="material-icons">close</i>
           </div>
         </div>
         <div class="live-dialog-content">
-          <slot>
-
-          </slot>
+          <slot></slot>
         </div>
-        <div class="live-dialog-footer">
-          <l-button type="primary" @click="close">确定</l-button>
+        <div class="live-dialog-footer" v-if="$slots.footer">
+          <slot name="footer"></slot>
         </div>
-        <slot name="footer">
-
-        </slot>
       </div>
     </transition>
   </div>
@@ -37,6 +35,10 @@ export default {
       type: [Number, String],
       default: '400px',
     },
+    maskDisabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {}
@@ -52,13 +54,16 @@ export default {
     },
   },
   mounted() {
-
+    console.log(this.$slot)
   },
   methods: {
     close() {
       if (this.value) {
         this.$emit('input', false)
       }
+    },
+    outSideClose() {
+      return this.maskDisabled ? null : this.close()
     },
   },
 }
