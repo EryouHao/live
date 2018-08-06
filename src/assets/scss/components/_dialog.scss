@@ -11,7 +11,7 @@
   align-items: center;
 
   .live-dialog {
-    width: 300px;
+    width: 400px;
     height: 200px;
     background: #fff;
     // border: 1px solid #000;
@@ -42,7 +42,7 @@
         border-radius: 50%;
         flex-shrink: 0;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: color 0.3s;
         &:hover {
           color: $main-color;
         }
@@ -53,7 +53,7 @@
       flex: 1;
     }
     .live-dialog-footer {
-      padding: 16px;
+      padding: 8px 16px;
       text-align: right;
       flex-shrink: 0;
     }

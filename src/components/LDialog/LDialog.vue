@@ -1,7 +1,7 @@
 <template>
-  <transition name="fade-select">
-    <div class="live-dialog-container" v-show="value">
-      <div class="live-dialog" v-click-outside="close">
+  <div class="live-dialog-container" v-show="value">
+    <transition name="fade-select">
+      <div class="live-dialog" v-show="value" v-click-outside="close" :style="style">
         <div class="live-dialog-header">
           <div class="dialog-title">{{ title }}</div>
           <div class="dialog-close" @click="close">
@@ -20,8 +20,8 @@
 
         </slot>
       </div>
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -33,10 +33,23 @@ export default {
       type: String,
       default: '',
     },
-    width: [Number, String],
+    width: {
+      type: [Number, String],
+      default: '400px',
+    },
   },
   data() {
     return {}
+  },
+  computed: {
+    style() {
+      const styleObj = {}
+      if (this.width) {
+        styleObj.width = typeof this.width === 'string' ? this.width : `${this.width}px`
+      }
+      
+      return styleObj
+    },
   },
   mounted() {
 
