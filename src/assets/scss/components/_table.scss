@@ -1,0 +1,35 @@
+.live-table-container {
+
+}
+
+.live-table {
+  display: table;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+
+  th {
+    background: $lighter-gray;
+  }
+
+  th, td {
+    border: 1px solid #dfe2e5;
+    padding: 12px 16px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+  }
+
+  &.is-border {
+    th, td {
+      border-left-width: 1px;
+      border-right-width: 1px;
+    }
+  }
+
+}
+.live-thead {
+  width: 100%;
+}
