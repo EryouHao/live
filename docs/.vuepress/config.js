@@ -41,6 +41,7 @@ module.exports = {
           '/components/notification',
           '/components/form',
           '/components/dialog',
+          '/components/table',
         ],
       },
     ],

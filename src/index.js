@@ -13,6 +13,7 @@ import LTooltip from './components/LTooltip'
 import LNotification from './components/LNotification'
 import LForm from './components/LForm'
 import LDialog from './components/LDialog'
+import LTable from './components/LTable'
 
 import ClickOutside from './directives/click-outside'
 
@@ -27,6 +28,7 @@ const components = [
   LNotification,
   LForm,
   LDialog,
+  LTable,
 ]
 
 const Live = {
