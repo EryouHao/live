@@ -64,11 +64,6 @@ export default {
       loading: false,
     }
   },
-  methods: {
-    hello() {
-      console.log('hello world')
-    },
-  },
 }
 </script>
 
