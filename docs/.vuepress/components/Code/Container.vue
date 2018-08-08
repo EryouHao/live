@@ -1,7 +1,11 @@
 <template>
   <div class="code-container" :class="{ 'is-all' : all }">
     <slot></slot>
-    <l-button class="btn-all" long @click="all = !all">{{ all ? 'Hide code' : 'Show all code' }}</l-button>
+    <l-button class="btn-all" long @click="all = !all">
+      <i class="material-icons" v-if="all">unfold_less</i>
+      <i class="material-icons" v-else>unfold_more</i>
+      {{ all ? 'Hide code' : 'Show code' }}
+    </l-button>
   </div>
 </template>
 

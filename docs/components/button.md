@@ -7,3 +7,7 @@
 <Code-Container>
   <<< @/docs/.vuepress/components/Demos/LButton/Default.vue
 </Code-Container>
+
+## API
+
+<Api-LButton />
