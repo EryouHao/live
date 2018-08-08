@@ -14,6 +14,7 @@ import LNotification from './components/LNotification'
 import LForm from './components/LForm'
 import LDialog from './components/LDialog'
 import LTable from './components/LTable'
+import LGrid from './components/LGrid'
 
 import ClickOutside from './directives/click-outside'
 
@@ -29,6 +30,7 @@ const components = [
   LForm,
   LDialog,
   LTable,
+  LGrid,
 ]
 
 const Live = {
