@@ -1,3 +1,5 @@
+@import '../mixins/index.scss';
+
 $colLen: 24;
 
 .live-row {
@@ -14,6 +16,16 @@ $colLen: 24;
     }
     .live-col-offset-#{$i} {
       margin-left: (1 / $colLen * $i * 100) * 1%;
+    }
+  }
+
+  @each $size in xs, sm, md, lg, xl {
+    @include media($size) {
+      @for $i from 0 through $colLen {
+        .live-col-#{$size}-#{$i} {
+          width: (1 / $colLen * $i * 100) * 1%;
+        }
+      }
     }
   }
 

@@ -24,3 +24,13 @@
 <div slot="demo">
   <Demos-LGrid-Offset></Demos-LGrid-Offset>
 </div>
+
+### 排序(Order)
+<div slot="demo">
+  <Demos-LGrid-Order></Demos-LGrid-Order>
+</div>
+
+### 响应式(Responsive)
+<div slot="demo">
+  <Demos-LGrid-Responsive></Demos-LGrid-Responsive>
+</div>
