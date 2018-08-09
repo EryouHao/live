@@ -1,6 +1,6 @@
 # Grid
 
-### 基础栅格
+### 基础(Span)
 <div slot="demo">
   <Demos-LGrid-Default></Demos-LGrid-Default>
 </div>

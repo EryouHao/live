@@ -1,8 +1,10 @@
 <template>
   <div class="">
-    <l-radio v-model="align" value="top">top</l-radio>
-    <l-radio v-model="align" value="center">center</l-radio>
-    <l-radio v-model="align" value="bottom">bottom</l-radio>
+    <div class="selector">
+      <l-radio v-model="align" value="top">top</l-radio>
+      <l-radio v-model="align" value="center">center</l-radio>
+      <l-radio v-model="align" value="bottom">bottom</l-radio>
+    </div>
     <l-row justify="space-between" :align="align">
       <l-col :span="3"><div class="item1">3</div></l-col>
       <l-col :span="3"><div class="item2">3</div></l-col>
@@ -52,5 +54,8 @@ export default {
   height: 20px;
   background: #006CFF;
   line-height: 20px;
+}
+.selector {
+  margin: 16px 0;
 }
 </style>

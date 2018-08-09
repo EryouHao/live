@@ -1,8 +1,10 @@
 <template>
   <div class="">
-    <l-radio v-model="gutter" :value="8">8</l-radio>
-    <l-radio v-model="gutter" :value="16">16</l-radio>
-    <l-radio v-model="gutter" :value="32">32</l-radio>
+    <div class="selector">
+      <l-radio v-model="gutter" :value="8">8</l-radio>
+      <l-radio v-model="gutter" :value="16">16</l-radio>
+      <l-radio v-model="gutter" :value="32">32</l-radio>
+    </div>
     <l-row :gutter="gutter">
       <l-col :span="6"><div class="item">3</div></l-col>
       <l-col :span="6"><div class="item">3</div></l-col>
@@ -36,5 +38,8 @@ export default {
   height: 50px;
   background: #006CFF;
   line-height: 50px;
+}
+.selector {
+  margin: 16px 0;
 }
 </style>

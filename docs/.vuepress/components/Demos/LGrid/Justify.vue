@@ -1,10 +1,12 @@
 <template>
   <div class="">
-    <l-radio v-model="justify" value="start">start</l-radio>
-    <l-radio v-model="justify" value="center">center</l-radio>
-    <l-radio v-model="justify" value="end">end</l-radio>
-    <l-radio v-model="justify" value="space-around">space-around</l-radio>
-    <l-radio v-model="justify" value="space-between">space-between</l-radio>
+    <div class="selector">
+      <l-radio v-model="justify" value="start">start</l-radio>
+      <l-radio v-model="justify" value="center">center</l-radio>
+      <l-radio v-model="justify" value="end">end</l-radio>
+      <l-radio v-model="justify" value="space-around">space-around</l-radio>
+      <l-radio v-model="justify" value="space-between">space-between</l-radio>
+    </div>
     <l-row :justify="justify">
       <l-col :span="3">3</l-col>
       <l-col :span="3">3</l-col>
@@ -45,5 +47,8 @@ export default {
 }
 .item2 {
   height: 20px;
+}
+.selector {
+  margin: 16px 0;
 }
 </style>

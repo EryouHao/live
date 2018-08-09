@@ -1,6 +1,8 @@
 <template>
   <div class="">
-    <l-radio v-model="columns" v-for="i in [1, 2, 3, 4, 6, 8]" :value="i">{{ i }}</l-radio>
+    <div class="selector">
+      <l-radio v-model="columns" v-for="i in [1, 2, 3, 4, 6, 8]" :value="i">{{ i }}</l-radio>
+    </div>
     <l-row>
       <l-col :span="24 / columns" v-for="i in columns">{{ 24 / columns }}</l-col>
     </l-row>
@@ -32,5 +34,8 @@ export default {
   margin-bottom: 24px;
   padding: 8px;
   background: #eee;
+}
+.selector {
+  margin: 16px 0;
 }
 </style>
