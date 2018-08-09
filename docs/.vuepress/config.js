@@ -28,6 +28,13 @@ module.exports = {
         ],
       },
       {
+        title: '布局',
+        collapsable: false,
+        children: [
+          '/components/grid',
+        ],
+      },
+      {
         title: '组件',
         collapsable: false,
         children: [

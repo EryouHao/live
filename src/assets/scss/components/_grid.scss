@@ -1,7 +1,21 @@
+$colLen: 24;
+
 .live-row {
+  display: flex;
+  flex-wrap: wrap;
 
-}
-
-.live-col {
+  .live-col {
   
+  }
+
+  @for $i from 0 through $colLen {
+    .live-col-#{$i} {
+      width: (1 / $colLen * $i * 100) * 1%;
+      flex: 0 0 auto;
+    }
+    .live-col-offset-#{$i} {
+      margin-left: (1 / $colLen * $i * 100) * 1%;
+    }
+  }
+
 }
