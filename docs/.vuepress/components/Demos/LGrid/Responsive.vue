@@ -2,10 +2,10 @@
   <div class="">
     <div class="selector"></div>
     <l-row>
-      <l-col :xs="24" :md="12" :lg="6" :xl="6">first</l-col>
-      <l-col :xs="24" :md="12" :lg="6" :xl="6">second</l-col>
-      <l-col :xs="24" :md="12" :lg="6" :xl="6">third</l-col>
-      <l-col :xs="24" :md="12" :lg="6" :xl="6">fourth</l-col>
+      <l-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">first</l-col>
+      <l-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">second</l-col>
+      <l-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">third</l-col>
+      <l-col :xs="0" :sm="24" :md="12" :lg="6" :xl="6">fourth</l-col>
     </l-row>
   </div>
 </template>
