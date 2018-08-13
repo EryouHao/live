@@ -3,6 +3,15 @@
     <l-table :columns="columns" :data="data"></l-table>
     <br><br>
     <l-table :columns="columns" :data="data" border></l-table>
+    <br><br>
+    <l-table :columns="columns" :data="data">
+      <span slot="customTitle">
+        Name <l-button type="text" icon="search" size="small"></l-button>
+      </span>
+      <span slot="action" slot-scope="{ row }">
+        <l-button type="primary">{{ row.age }}</l-button>
+      </span>
+    </l-table>
   </div>
 </template>
 
@@ -11,6 +20,7 @@ const columns = [
   {
     key: 'name',
     title: 'Name',
+    slots: { title: 'customTitle' },
   },
   {
     key: 'age',
@@ -20,6 +30,11 @@ const columns = [
     key: 'address',
     title: 'Address',
   },
+  {
+    key: 'action',
+    title: 'Action',
+    scopedSlots: { customRender: 'name' },
+  }
 ]
 
 const data = [

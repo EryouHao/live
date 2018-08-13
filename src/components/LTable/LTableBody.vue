@@ -2,7 +2,11 @@
   <tbody>
     <tr v-for="(item, dataIndex) in data" :key="dataIndex">
       <td v-for="(column, columnIndex) in columns" :key="columnIndex">
-        {{ item[column.key] }}
+        
+        <slot name="tableNode" :text="item[column.key]" :row="item">
+          {{ item[column.key] }}
+        </slot>
+
       </td>
     </tr>
   </tbody>
@@ -14,8 +18,17 @@ export default {
     columns: Array,
     data: Array,
   },
+  inject: ['scopeSlotNames'],
   data() {
     return {}
+  },
+  mounted() {
+    console.log('customBody: ', this.scopeSlotNames)
+  },
+  methods: {
+    // renderColumn(h, vnode) {
+    //   this.$slots.default = vnode
+    // },
   },
 }
 </script>

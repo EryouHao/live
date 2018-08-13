@@ -3,6 +3,11 @@
     <table class="live-table" :class="{ 'is-border': border }">
       <l-table-head :columns="columns"></l-table-head>
       <l-table-body :columns="columns" :data="data"></l-table-body>
+      
+      <template slot="tableNode" slot-scope="{ row }">
+        <slot v-for="name in scopeSlotNameList" :name="name" :row="row"></slot>
+      </template>
+
     </table>
   </div>
 </template>
@@ -26,10 +31,21 @@ export default {
     },
     border: Boolean,
   },
-  data() {
-    return {}
+  provide() {
+    return {
+      customHead: this.$slots,
+      scopeSlotNames: this.scopeSlotNames,
+    }
   },
-  computed: {
+  data() {
+    return {
+      scopeSlotNameList: null,
+    }
+  },
+  mounted() {
+    console.log(this.$slots)
+    console.log(this.$scopedSlots)
+    this.scopeSlotNameList = Object.keys(this.$scopedSlots)
   },
 }
 </script>
