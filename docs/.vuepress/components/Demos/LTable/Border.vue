@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <l-table :columns="columns" :data="data"></l-table>
+    <l-table :columns="columns" :data="data" border></l-table>
   </div>
 </template>
 

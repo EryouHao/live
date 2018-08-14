@@ -1,6 +1,14 @@
 <template>
   <div class="">
-    <l-table :columns="columns" :data="data"></l-table>
+    <l-table :columns="columns" :data="data">
+      <span slot="customTitle">
+        <l-button type="text" icon="hand-spock-o" size="small"></l-button>
+        Name
+      </span>
+      <span slot="action" slot-scope="{ row }">
+        <l-button type="text" icon="edit" size="small"></l-button>
+      </span>
+    </l-table>
   </div>
 </template>
 
@@ -9,6 +17,7 @@ const columns = [
   {
     key: 'name',
     title: 'Name',
+    slots: { title: 'customTitle' },
   },
   {
     key: 'age',
@@ -18,6 +27,11 @@ const columns = [
     key: 'address',
     title: 'Address',
   },
+  {
+    key: 'action',
+    title: 'Action',
+    scopedSlots: { customRender: 'action' },
+  }
 ]
 
 const data = [

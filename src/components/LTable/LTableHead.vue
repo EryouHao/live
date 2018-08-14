@@ -2,8 +2,8 @@
   <thead class="live-thead">
     <!-- TODO: 将 index 改成 _lid -->
     <th v-for="(item, index) in columns" :key="index">
-      <template v-if="item.slots && item.slots.title && customHead[item.slots.title]">
-        {{ renderTitle($createElement, customHead[item.slots.title]) }}
+      <template v-if="item.slots && item.slots.title && table.$slots[item.slots.title]">
+        {{ renderTitle($createElement, table.$slots[item.slots.title]) }}
         <slot></slot>
       </template>
       <template v-else>
@@ -20,7 +20,7 @@ export default {
       type: Array,
     },
   },
-  inject: ['customHead'],
+  inject: ['table'],
   data() {
     return {}
   },

@@ -2,12 +2,11 @@
   <div class="live-table-container">
     <table class="live-table" :class="{ 'is-border': border }">
       <l-table-head :columns="columns"></l-table-head>
-      <l-table-body :columns="columns" :data="data"></l-table-body>
-      
-      <template slot="tableNode" slot-scope="{ row }">
-        <slot v-for="name in scopeSlotNameList" :name="name" :row="row"></slot>
-      </template>
-
+      <l-table-body :columns="columns" :data="data">
+        <span :slot="column.key" v-for="column in columns" :key="column.key" slot-scope="{ row }">
+          <slot :name="column.key" :row="row"></slot>
+        </span>
+      </l-table-body>
     </table>
   </div>
 </template>
@@ -33,8 +32,7 @@ export default {
   },
   provide() {
     return {
-      customHead: this.$slots,
-      scopeSlotNames: this.scopeSlotNames,
+      table: this,
     }
   },
   data() {
@@ -45,7 +43,8 @@ export default {
   mounted() {
     console.log(this.$slots)
     console.log(this.$scopedSlots)
-    this.scopeSlotNameList = Object.keys(this.$scopedSlots)
+    this.scopeSlotNameList = (this.$scopedSlots && Object.keys(this.$scopedSlots)) || []
+    console.log('list: ', this.scopeSlotNameList)
   },
 }
 </script>
