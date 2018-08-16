@@ -49,6 +49,7 @@ module.exports = {
           '/components/form',
           '/components/dialog',
           '/components/table',
+          '/components/tag',
         ],
       },
     ],

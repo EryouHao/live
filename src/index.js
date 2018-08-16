@@ -15,6 +15,7 @@ import LForm from './components/LForm'
 import LDialog from './components/LDialog'
 import LTable from './components/LTable'
 import LGrid from './components/LGrid'
+import LTag from './components/LTag'
 
 import ClickOutside from './directives/click-outside'
 
@@ -31,6 +32,7 @@ const components = [
   LDialog,
   LTable,
   LGrid,
+  LTag,
 ]
 
 const Live = {
