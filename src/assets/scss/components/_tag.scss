@@ -1,3 +1,47 @@
+@mixin tag-color($color, $opacity: 0.2) {
+  border-color: $color;
+  color: $color;
+  background: rgba($color, $opacity);
+}
+
 .live-tag-container {
+  display: inline-block;
+  border: 1px solid;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  position: relative;
+
+  &.is-primary {
+    @include tag-color($main-color);
+  }
   
+  &.is-success {
+    @include tag-color($default-green);
+  }
+
+  &.is-info {
+    @include tag-color($default-green-blue);
+  }
+
+  &.is-warning {
+    @include tag-color($default-yellow);
+  }
+
+  &.is-danger {
+    @include tag-color($default-red);
+  }
+
+  &.is-closable {
+    padding-right: 22px;
+  }
+
+  .close {
+    padding: 4px 4px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-48%);
+  }
 }
