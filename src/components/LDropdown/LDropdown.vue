@@ -3,7 +3,7 @@
     <div class="live-dropdown-control">
       <slot></slot>
     </div>
-    <transition name="fade-select">
+    <transition name="fade-drop">
       <div class="live-dropdown-list" :class="classes" v-show="visible">
         <slot name="list"></slot>
       </div>
@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {
-      visible: true,
+      visible: false,
     }
   },
   computed: {

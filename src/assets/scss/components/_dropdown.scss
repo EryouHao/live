@@ -24,7 +24,7 @@
       background: transparent;
     }
 
-    &[class^="is-bottom-"] {
+    &[class*="is-bottom-"] {
       top: 100%;
       margin-top: 4px;
       &:before {
@@ -32,16 +32,25 @@
       }
     }
 
-    &.is-bottom-left {
+    &[class*="is-top-"] {
+      bottom: 100%;
+      margin-bottom: 4px;
+      &:before {
+        bottom: -4px;
+      }
+    }
+
+    &.is-bottom-left, &.is-top-left {
       left: 0;
     }
 
-    &.is-bottom-center {
+    &.is-bottom-center, &.is-top-center {
       left: 50%;
       transform: translateX(-50%);
+      will-change: top, left;
     }
 
-    &.is-bottom-right {
+    &.is-bottom-right, &.is-top-right {
       right: 0;
     }
   }
