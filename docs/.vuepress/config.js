@@ -51,6 +51,7 @@ module.exports = {
           '/components/table',
           '/components/tag',
           '/components/alert',
+          '/components/dropdown',
         ],
       },
     ],

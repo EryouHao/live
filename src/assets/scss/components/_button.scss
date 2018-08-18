@@ -12,6 +12,10 @@
   border-radius: $btn-border-radius;
   text-align: center;
   overflow: hidden;
+  > .text {
+    display: inline-flex;
+    align-items: center;
+  }
   
   // type
   &-default {

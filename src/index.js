@@ -17,6 +17,7 @@ import LTable from './components/LTable'
 import LGrid from './components/LGrid'
 import LTag from './components/LTag'
 import LAlert from './components/LAlert'
+import LDropdown from './components/LDropdown'
 
 import ClickOutside from './directives/click-outside'
 
@@ -35,6 +36,7 @@ const components = [
   LGrid,
   LTag,
   LAlert,
+  LDropdown,
 ]
 
 const Live = {
