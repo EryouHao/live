@@ -1,0 +1,60 @@
+@mixin alert-color($color, $opacity: 0.2) {
+  color: $color;
+  border-color: $color;
+  background: rgba($color, $opacity);
+}
+
+.live-alert-container {
+  padding: 8px 16px;
+  border-radius: 2px;
+  font-size: 14px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+
+  &.is-primary {
+    @include alert-color($main-color);
+  }
+
+  &.is-success {
+    @include alert-color($default-green);
+  }
+
+  &.is-info {
+    @include alert-color($default-green-blue);
+  }
+
+  &.is-warning {
+    @include alert-color($default-yellow);
+  }
+
+  &.is-danger {
+    @include alert-color($default-red);
+  }
+
+  .live-alert-icon-container {
+    width: 28px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .live-alert-content {
+    flex: 1;
+    .live-alert-title {
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+  }
+
+  .live-alert-close-container {
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: -4px;
+    cursor: pointer;
+  }
+}

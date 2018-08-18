@@ -50,6 +50,7 @@ module.exports = {
           '/components/dialog',
           '/components/table',
           '/components/tag',
+          '/components/alert',
         ],
       },
     ],
